@@ -1,0 +1,67 @@
+# ============================================================
+# Kargar Generator Manifest
+# ============================================================
+
+# Basic generator information.
+name = "kargar-generator"
+description = "A starter template for creating Kargar generators."
+version = "0.1.0"
+
+
+# ============================================================
+# Template
+# ============================================================
+
+[template]
+
+# Directory containing the files for the generated project.
+directory = "templates"
+
+
+# Rename template files when they are copied.
+#
+# The key is the filename inside `templates/`.
+# The value is the filename in the generated project.
+[template.files]
+
+"gitignore" = ".gitignore"
+
+
+# ============================================================
+# Inputs
+# ============================================================
+
+# Values Kargar asks the user for when generating the project.
+
+[inputs.project_name]
+
+type = "string"
+description = "Name of the project"
+default = "my-project"
+
+
+# ============================================================
+# Commands
+# ============================================================
+
+# Commands are executed in the order they appear.
+#
+# Commands are OPTIONAL. A generator does not need to contain
+# any commands.
+#
+# IMPORTANT:
+# Kargar MUST ask the user whether they trust the generator
+# immediately after cloning it, before generating the project
+# or executing any commands.
+
+[[commands]]
+name = "install"
+command = "uv sync"
+
+[[commands]]
+name = "git-init"
+command = "git init"
+
+[[commands]]
+name = "setup"
+command = "uv run setup.py"
