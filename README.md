@@ -1,3 +1,3 @@
-# Kargar Generator Template
+# Kargar Python Generator
 
-This is a template for someone who wants to create a generator for its project.
+A Python generator for Kargar.
